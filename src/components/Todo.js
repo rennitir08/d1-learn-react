@@ -4,9 +4,9 @@ class Todo extends React.Component {
     render() {
         return <li className="list-group-item">
                     <div className="checkbox">
-                    <label>
-                        <input type="checkbox" data-id={this.props.todoId} value={this.props.completed === 'yes' ? 'checked' : ''}/>
-                        <span className={this.props.completed === 'yes' ? 'done' : ''}>{this.props.description}</span>       
+                    <label className={this.props.completed === 'yes' ? 'done' : ''}>
+                        <input type="checkbox" checked={this.props.completed === 'yes' ? true : false} onChange={(e) => this.props.toggleComplete(this.props.id, e.target.checked)}/>
+                        {this.props.todo}       
                         </label>
                     </div>
                     <div className="checkbox text-right">
@@ -17,5 +17,6 @@ class Todo extends React.Component {
                 </li>                         
             }
         }
+
 
 export default Todo;
