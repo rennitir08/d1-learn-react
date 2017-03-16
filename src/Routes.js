@@ -1,6 +1,5 @@
 // Load React
 import React from 'react'
-import App from './components/App';
 // Load React Router
 import { Router, Route, browserHistory } from 'react-router'
 
@@ -12,7 +11,7 @@ const history = syncHistoryWithStore(browserHistory, store)
 
 // Load page view components
 // Import your Todos and Completed components here...
-import Todos from './components/Todo';
+import Todos from './components/Todos';
 import Completed from './components/Completed';
 
 // Configure routes

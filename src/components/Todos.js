@@ -1,5 +1,7 @@
 import React from 'react';
 import Todo from './Todo';
+import AddTodo from './AddTodo';
+import Layout from './Layout';
 import { connect } from 'react-redux'
 import { browserHistory } from 'react-router'
 
@@ -8,7 +10,7 @@ class Todos extends React.Component {
         super(props)
         this.getTodos = this.getTodos.bind(this)
         this.addTodo = this.addTodo.bind(this)
-        // this.toggleComplete = this.toggleComplete.bind(this)
+        this.toggleComplete = this.toggleComplete.bind(this)
 
         // this.state = {
         //     todos: []
@@ -45,13 +47,15 @@ class Todos extends React.Component {
         todos = <div className="alert alert-success text-center">Start by adding a task above.</div>
     }
 
-        return <div>
-                <button className="btn btn-default" type="button" onClick={() => browserHistory.push('/completed')}>View Completed Todos</button>
-                <addTodo onChange={this.addTodo} />
+        return <Layout>
+                <AddTodo onChange={this.addTodo} />
+                    <button className="btn btn-default" type="button" onClick={() => browserHistory.push('/completed')}>View Completed Todos</button>
+                        <br/>
+                        <br/>   
                 <ul className="list-group">
                     {todos}
                 </ul>
-            </div>
+            </Layout>
     }
 }
 

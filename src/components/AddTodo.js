@@ -3,7 +3,7 @@ import React from 'react';
 class AddTodo extends React.Component {
     constructor(props) {
         super(props)
-        this.onClick = this.onClick.bind(this)
+        this.onClickAddTodo = this.onClickAddTodo.bind(this)
         this.state = {
             description: '',
             category: '',

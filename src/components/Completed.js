@@ -1,18 +1,15 @@
 import React from 'react';
 import { browserHistory } from 'react-router';
 import { connect } from 'react-redux'
+import Layout from './Layout';
 
 
 class Completed extends React.Component {
     render() {
-        return <div className="container">
-            <div className="row">
-                <div className="col-sm-6 col-sm-offset-3">
+        return <Layout>
                 <h1 className="text-center">Completed Todos</h1> 
                 <button className="btn btn-default" type="button" onClick={() => browserHistory.push('/')}>View All Todos</button>
-                </div>
-            </div>
-        </div>
+            </Layout>
     }
 }
 // Map shared Redux state to props
